@@ -1,0 +1,21 @@
+{% extends "pizzas/base.html" %}
+
+{% block content %}
+<font face="Optima" size="5px" color="ffbd33"> 3p's awsome selecton of epicly dedicious pizzas </font>
+
+<ul>
+    {% for p in pizzas %}
+
+    <li>
+        <a href="{% url 'pizzas:pizza' p.id %}"> {{ p }} </a>
+
+    </li>
+    {% empty %}
+    <li>
+        No pizzas have been added yet.
+    </li>
+
+    {% endfor %}
+</ul>
+<img src="static/pizzas/images/HawaiianPizza.png">
+{% endblock content %}
